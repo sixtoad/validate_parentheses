@@ -3,6 +3,10 @@
  */
 package es.sixto.validparenthesses;
 
+import java.util.Stack;
+
+import javax.swing.tree.VariableHeightLayoutCache;
+
 /**
  * @author Sixto
  * Given a string comprising just of the characters (,),{,},[,] determine if it is well-formed or not.
@@ -25,7 +29,22 @@ public class ValidParenthesses {
 	}
 
 	public String isValid(String stringToTest) {
-		// TODO Auto-generated method stub
+		Stack<Character> stackBrackets = new Stack<Character>();
+		for (int i = 0; i < stringToTest.length(); i++) {
+			char charToValidate = stringToTest.charAt(i);
+			if (charToValidate == '{' || charToValidate == '(' || charToValidate == '[') {
+				stackBrackets.push(charToValidate);
+			} else if (charToValidate=='}' && stackBrackets.peek()=='{') {
+				stackBrackets.pop();
+			} else if (charToValidate==']' && stackBrackets.peek()=='[') {
+				stackBrackets.pop();
+			} else if (charToValidate==')' && stackBrackets.peek()=='(') {
+				stackBrackets.pop();
+			}
+		}
+		if (stackBrackets.empty()!=true) {
+			return "False";
+		}
 		return "True";
 	}
 
