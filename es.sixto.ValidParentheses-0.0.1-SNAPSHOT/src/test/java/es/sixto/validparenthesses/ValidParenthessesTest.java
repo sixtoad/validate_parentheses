@@ -87,4 +87,12 @@ public class ValidParenthessesTest {
 		String result = validator.isValidFromFile(pathToFile);
 		assertSame("Must be valid", "True", result);
 	}
+	
+	@Test
+	public void testValidFromFileFail () {
+		String pathToFile = "src/main/test/resources/simpleParenthesisFail";
+		ValidParenthesses validator = new ValidParenthesses();
+		String result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be not valid", "False", result);
+	}
 }
