@@ -12,6 +12,12 @@ public class ValidParenthessesTest {
 		ValidParenthesses checker = new ValidParenthesses();
 		String result = checker.isValid (stringToTest);
 		assertSame("Not valid ()", "True", result);
+		stringToTest = "[]";
+		result = checker.isValid (stringToTest);
+		assertSame("Not valid []", "True", result);
+		stringToTest = "{}";
+		result = checker.isValid (stringToTest);
+		assertSame("Not valid {}", "True", result);
 	}
 
 }
