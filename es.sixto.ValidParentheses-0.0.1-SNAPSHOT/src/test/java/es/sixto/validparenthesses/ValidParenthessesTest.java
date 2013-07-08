@@ -92,6 +92,62 @@ public class ValidParenthessesTest {
 	}
 	
 	@Test
+	public void testValidFromFileSeveralLines () {
+		String pathToFile = "./src/test/resources/complexParenthesisOK";
+		ValidParenthesses validator = new ValidParenthesses();
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be valid", "True", result[0]);
+		assertSame("Must be valid", "True", result[1]);
+		assertSame("Must be valid", "True", result[2]);
+		assertSame("Must be valid", "True", result[3]);
+		assertSame("Must be valid", "True", result[4]);
+		assertSame("Must be valid", "True", result[5]);
+		assertSame("Must be valid", "True", result[6]);
+	}
+	
+	@Test
+	public void testValidFromFileSeveralLinesHuge () {
+		String pathToFile = "./src/test/resources/hugeParenthesisOK";
+		ValidParenthesses validator = new ValidParenthesses();
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be valid", "True", result[0]);
+		assertSame("Must be valid", "True", result[1]);
+		assertSame("Must be valid", "True", result[2]);
+		assertSame("Must be valid", "True", result[3]);
+		assertSame("Must be valid", "True", result[4]);
+		assertSame("Must be valid", "True", result[5]);
+		assertSame("Must be valid", "True", result[6]);
+	}
+	
+	@Test
+	public void testValidFromFileSeveralLinesHugeFail () {
+		String pathToFile = "./src/test/resources/hugeParenthesisFail";
+		ValidParenthesses validator = new ValidParenthesses();
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be valid", "False", result[0]);
+		assertSame("Must be valid", "False", result[1]);
+		assertSame("Must be valid", "False", result[2]);
+		assertSame("Must be valid", "False", result[3]);
+		assertSame("Must be valid", "False", result[4]);
+		assertSame("Must be valid", "False", result[5]);
+		assertSame("Must be valid", "False", result[6]);
+	}
+	
+	@Test
+	public void testValidFromFileSeveralLinesFail () {
+		String pathToFile = "./src/test/resources/complexParenthesisFail";
+		ValidParenthesses validator = new ValidParenthesses();
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be valid", "False", result[0]);
+		assertSame("Must be valid", "False", result[1]);
+		assertSame("Must be valid", "False", result[2]);
+		assertSame("Must be valid", "False", result[3]);
+		assertSame("Must be valid", "False", result[4]);
+		assertSame("Must be valid", "False", result[5]);
+		assertSame("Must be valid", "False", result[6]);
+	}
+	
+	@Test
 	public void testValidFromFileFail () {
 		String pathToFile = "./src/test/resources/simpleParenthesisFail";
 		ValidParenthesses validator = new ValidParenthesses();
