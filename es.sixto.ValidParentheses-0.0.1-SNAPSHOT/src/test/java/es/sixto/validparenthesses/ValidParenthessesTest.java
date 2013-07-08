@@ -162,4 +162,22 @@ public class ValidParenthessesTest {
 		String[] result = validator.isValidFromFile(pathToFile);
 		assertSame("Must be controlated exception", "File not found", result[0]);
 	}
+	
+	@Test
+	public void testMainMehodOK () {
+		String pathToFile = "./src/test/resources/complexParenthesisOK";
+		ValidParenthesses validator = new ValidParenthesses();
+		String[] args = new String[1];
+		args[0] = pathToFile;
+		String result = validator.run(args);
+		StringBuffer expected = new StringBuffer();
+		expected.append("True\n");
+		expected.append("True\n");
+		expected.append("True\n");
+		expected.append("True\n");
+		expected.append("True\n");
+		expected.append("True\n");
+		expected.append("True\n");
+		assertSame("Must be valid", expected.toString(), result);
+	}
 }
