@@ -28,8 +28,22 @@ public class ValidParenthesses {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println(new ValidParenthesses().run(args));
+	}
+	
+	public String run (String[] args) {
+		String result = null;
+		if (args.length>0) {
+			String[] resultArray = this.isValidFromFile(args[0]);
+			StringBuffer tempString = new StringBuffer();
+			for (int i = 0; i < resultArray.length; i++) {
+				tempString.append(resultArray[i]+"\n");
+			}
+			result = tempString.toString();
+		} else {
+			result = "You must to pass a valid path for a file to process";
+		}
+		return result;
 	}
 
 	public String isValid(String stringToTest) {
