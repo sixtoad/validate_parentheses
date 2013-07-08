@@ -7,7 +7,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Stack;
 
 import javax.swing.tree.VariableHeightLayoutCache;
@@ -31,26 +33,27 @@ public class ValidParenthesses {
 	}
 
 	public String isValid(String stringToTest) {
-		Stack<Character> stackBrackets = new Stack<Character>();
+		ArrayDeque<Character> stackBrackets = new ArrayDeque<Character>();
+		
 		for (int i = 0; i < stringToTest.length(); i++) {
 			char charToValidate = stringToTest.charAt(i);
 			if (charToValidate == '{' || charToValidate == '('
 					|| charToValidate == '[') {
 				stackBrackets.push(charToValidate);
-			} else if (stackBrackets.empty() != true && charToValidate == '}'
+			} else if (stackBrackets.isEmpty() != true && charToValidate == '}'
 					&& stackBrackets.peek() == '{') {
 				stackBrackets.pop();
-			} else if (stackBrackets.empty() != true && charToValidate == ']'
+			} else if (stackBrackets.isEmpty() != true && charToValidate == ']'
 					&& stackBrackets.peek() == '[') {
 				stackBrackets.pop();
-			} else if (stackBrackets.empty() != true && charToValidate == ')'
+			} else if (stackBrackets.isEmpty() != true && charToValidate == ')'
 					&& stackBrackets.peek() == '(') {
 				stackBrackets.pop();
 			} else {
 				return "False";
 			}
 		}
-		if (stackBrackets.empty() != true) {
+		if (stackBrackets.isEmpty() != true) {
 			return "False";
 		}
 		return "True";
