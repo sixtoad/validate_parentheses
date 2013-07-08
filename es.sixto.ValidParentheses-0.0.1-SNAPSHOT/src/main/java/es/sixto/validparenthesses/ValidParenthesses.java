@@ -9,10 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.Stack;
-
-import javax.swing.tree.VariableHeightLayoutCache;
 
 /**
  * @author Sixto Given a string comprising just of the characters (,),{,},[,]
