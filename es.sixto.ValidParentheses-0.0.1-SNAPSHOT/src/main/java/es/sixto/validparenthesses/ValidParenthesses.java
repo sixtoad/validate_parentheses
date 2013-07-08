@@ -68,8 +68,7 @@ public class ValidParenthesses {
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-
+			processesLines.add("File not found");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
