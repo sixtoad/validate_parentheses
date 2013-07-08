@@ -98,4 +98,12 @@ public class ValidParenthessesTest {
 		String[] result = validator.isValidFromFile(pathToFile);
 		assertSame("Must be not valid", "False", result[0]);
 	}
+	
+	@Test
+	public void testValidFromFileNotFoundException () {
+		String pathToFile = "notExist";
+		ValidParenthesses validator = new ValidParenthesses();
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be controlated exception", "File not found", result[0]);
+	}
 }
