@@ -40,12 +40,18 @@ public class ValidParenthesses {
 				stackBrackets.pop();
 			} else if (stackBrackets.empty()!= true && charToValidate==')' && stackBrackets.peek()=='(') {
 				stackBrackets.pop();
+			} else {
+				return "False";
 			}
 		}
 		if (stackBrackets.empty()!=true) {
 			return "False";
 		}
 		return "True";
+	}
+	
+	public String isValidFromFile (String pathToFile) {
+		return null;
 	}
 
 }
