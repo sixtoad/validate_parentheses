@@ -7,8 +7,11 @@ import org.junit.Test;
 public class ValidParenthessesTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testSimpleBrackets() {
+		String stringToTest = "()";
+		ValidParenthesses checker = new ValidParenthesses();
+		String result = checker.isValid (stringToTest);
+		assertSame("Not valid ()", "True", result);
 	}
 
 }
