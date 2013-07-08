@@ -34,11 +34,11 @@ public class ValidParenthesses {
 			char charToValidate = stringToTest.charAt(i);
 			if (charToValidate == '{' || charToValidate == '(' || charToValidate == '[') {
 				stackBrackets.push(charToValidate);
-			} else if (charToValidate=='}' && stackBrackets.peek()=='{') {
+			} else if (stackBrackets.empty()!= true && charToValidate=='}' && stackBrackets.peek()=='{') {
 				stackBrackets.pop();
-			} else if (charToValidate==']' && stackBrackets.peek()=='[') {
+			} else if (stackBrackets.empty()!= true && charToValidate==']' && stackBrackets.peek()=='[') {
 				stackBrackets.pop();
-			} else if (charToValidate==')' && stackBrackets.peek()=='(') {
+			} else if (stackBrackets.empty()!= true && charToValidate==')' && stackBrackets.peek()=='(') {
 				stackBrackets.pop();
 			}
 		}
