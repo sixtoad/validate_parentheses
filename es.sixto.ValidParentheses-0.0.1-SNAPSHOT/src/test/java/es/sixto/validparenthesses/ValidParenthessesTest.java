@@ -105,7 +105,7 @@ public class ValidParenthessesTest {
 		assertSame("Must be valid", "True", result[6]);
 	}
 	
-	@Test
+	@Test (timeout=1000)
 	public void testValidFromFileSeveralLinesHuge () {
 		String pathToFile = "./src/test/resources/hugeParenthesisOK";
 		ValidParenthesses validator = new ValidParenthesses();
@@ -119,7 +119,7 @@ public class ValidParenthessesTest {
 		assertSame("Must be valid", "True", result[6]);
 	}
 	
-	@Test
+	@Test (timeout=1000)
 	public void testValidFromFileSeveralLinesHugeFail () {
 		String pathToFile = "./src/test/resources/hugeParenthesisFail";
 		ValidParenthesses validator = new ValidParenthesses();
