@@ -2,6 +2,8 @@ package es.sixto.validparenthesses;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import org.junit.Test;
 
 public class ValidParenthessesTest {
@@ -82,17 +84,18 @@ public class ValidParenthessesTest {
 	
 	@Test
 	public void testValidFromFile () {
-		String pathToFile = "src/main/test/resources/simpleParenthesisOK";
+		String pathToFile = "./src/test/resources/simpleParenthesisOK";
 		ValidParenthesses validator = new ValidParenthesses();
-		String result = validator.isValidFromFile(pathToFile);
-		assertSame("Must be valid", "True", result);
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be valid", "True", result[0]);
+
 	}
 	
 	@Test
 	public void testValidFromFileFail () {
-		String pathToFile = "src/main/test/resources/simpleParenthesisFail";
+		String pathToFile = "./src/test/resources/simpleParenthesisFail";
 		ValidParenthesses validator = new ValidParenthesses();
-		String result = validator.isValidFromFile(pathToFile);
-		assertSame("Must be not valid", "False", result);
+		String[] result = validator.isValidFromFile(pathToFile);
+		assertSame("Must be not valid", "False", result[0]);
 	}
 }
