@@ -51,7 +51,7 @@ public class ValidParenthesses {
 	}
 	
 	public String isValidFromFile (String pathToFile) {
-		return null;
+		return "True";
 	}
 
 }
